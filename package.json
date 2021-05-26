@@ -1,0 +1,21 @@
+{
+  "name": "nodejs-shark-demo",
+  "version": "1.0.0",
+  "description": "nodejs shark demo",
+  "author": "Sammy the Shark <sammy@example.com>",
+  "license": "MIT",
+  "main": "app.js",
+  "keywords": [
+    "nodejs",
+    "bootstrap",
+    "express"
+  ],
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "scripts": {
+    "build": "sudo docker build -t $(cat ${DOCKERHUBUSER})/$(node -p \"try { require('./package.json').name } catch(e) {}\") .",
+    "start:dev": "node ./app.js",
+    "start:prod": "sudo docker run -p 8080:8080 -d $(cat ${DOCKERHUBUSER})/$(node -p \"try { require('./package.json').name } catch(e) {}\")"
+  }
+}
