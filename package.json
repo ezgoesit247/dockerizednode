@@ -16,10 +16,10 @@
     "mongoose": "^5.12.12"
   },
   "scripts": {
-    "dev:start": "node ./app.js",
-    "prod:build": "sudo docker build -t $(cat ${DOCKERHUBUSER})/$(node -p \"try { require('./package.json').name } catch(e) {}\") .",
-    "prod:start": "sudo docker run -p 8080:8080 -d --name $(node -p \"try { require('./package.json').name } catch(e) {}\") $(cat ${DOCKERHUBUSER})/$(node -p \"try { require('./package.json').name } catch(e) {}\")",
-    "prod:stop": "sudo docker stop $(node -p \"try { require('./package.json').name } catch(e) {}\")",
-    "prod:restart": "sudo docker start $(node -p \"try { require('./package.json').name } catch(e) {}\")"
+    "dev:start": "node ./app.js"
+    // ,"prod:build": "sudo docker build -t $(cat ${DOCKERHUBUSER})/$(node -p \"try { require('./package.json').name } catch(e) {}\") ."
+    // ,"prod:start": "sudo docker run -p 8080:8080 -d --name $(node -p \"try { require('./package.json').name } catch(e) {}\") $(cat ${DOCKERHUBUSER})/$(node -p \"try { require('./package.json').name } catch(e) {}\")"
+    // ,"prod:stop": "sudo docker stop $(node -p \"try { require('./package.json').name } catch(e) {}\")"
+    // ,"prod:restart": "sudo docker start $(node -p \"try { require('./package.json').name } catch(e) {}\")"
   }
 }

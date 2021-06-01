@@ -1,3 +1,5 @@
 #!/bin/sh
 
 echo 'use: `npm run <scripts_name>`'
+echo $(node -p "try { require('./package.json').scripts } catch(e) {}")
+
